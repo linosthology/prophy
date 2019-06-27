@@ -1,0 +1,787 @@
+/* ---------------------------------------------   
+    Globale Variablen   
+  ------------------------------------------- */
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    --primaryColor: rgb(23, 41, 80);
+}
+
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primaryColor);
+}
+
+/* ---------------------------------------------   
+    Header 
+  ------------------------------------------- */
+
+.bgColor {
+    width: 100%;
+    height: 80px;
+}
+.headerContainer {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.leftContainer,
+.rightContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#title {
+    font-weight: bold;
+    color: white;
+    font-size: 3em;
+}
+#currentPlace:hover,
+#favorites:hover,
+#search:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+.headerIcon {
+    color: white;
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+
+/* ---------------------------------------------   
+    Content Container
+  ------------------------------------------- */
+
+.loggedIn {
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+.loggedIn i {
+    margin-left: 10px;
+}
+
+#userSettings:hover {
+    cursor: pointer;
+    color: orange;
+}
+#userLogout:hover {
+    cursor: pointer;
+    color: orange;
+}
+#userDelete:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+/* ---------------------------------------------   
+    Content Container
+  ------------------------------------------- */
+.contentContainer {
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    font-size: 16px;
+}
+
+/* ---------------------------------------------   
+    Toggle Button
+  ------------------------------------------- */
+#toggleButton {
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 50px;
+}
+#toggleButtonLeft,
+#toggleButtonRight {
+    font-size: 1.5em;
+    height: 100%;
+    font-weight: bold;
+    border-width: 2px;
+    width: 50%;
+    border-color: orange;
+}
+
+.toggleNotActive {
+    background-color: white;
+}
+.toggleNotActive:hover {
+    cursor: pointer;
+}
+.toggleActive {
+    background-color: orange;
+}
+
+#toggleButtonLeft {
+    border-right: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+#toggleButtonRight {
+    border-left: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* ---------------------------------------------   
+    Login
+  ------------------------------------------- */
+
+#loginContainer {
+    margin: 0 auto;
+    margin-top: 150px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 400px;
+    padding-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginInputsContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#loginLeft {
+    line-height: 41px;
+    padding: 20px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+#loginRight {
+    line-height: 41px;
+    padding: 20px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+#loginPasswordInputContainer,
+#loginNameInputContainer {
+    height: 35px;
+}
+#loginPasswordInput,
+#loginNameInput {
+    height: 100%;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#loginButtonContainer {
+    margin: 0 auto;
+}
+
+#loginButton {
+    background-color: var(--primaryColor);
+    color: white;
+    width: 300px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#loginButton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ---------------------------------------------   
+    Aktuelle Wetter
+  ------------------------------------------- */
+#currentWeatherContainer {
+    margin: 0 auto;
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+#currentWeatherHeader {
+    font-size: 2em;
+}
+
+#currentWeatherCreationTime {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+#currentWeatherEssentials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#currentWeatherTemperature {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+#currentWeatherRain {
+    display: flex;
+    margin-top: 5px;
+}
+
+#currentWeatherRain i {
+    padding-right: 10px;
+}
+
+#currentWeatherWindContainer {
+    margin-top: 20px;
+    display: flex;
+    width: 200px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#currentWeatherWindIcon {
+    padding-right: 10px;
+}
+
+#currentWeatherWindChild {
+    display: flex;
+    flex-direction: row;
+}
+
+#arrowWrap {
+    height: 2em;
+}
+
+#currentWeatherWindArrow {
+    height: 1em;
+    padding-left: 10px;
+}
+
+#currentWeatherWindDirection {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+#currentWeatherWindArrow {
+    transform: rotate(-45deg);
+    height: 100%;
+    font-size: 1.5em;
+}
+
+#currentWeatherAirPressure {
+    margin-top: 5px;
+}
+
+#currentWeatherSun {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#currentWeatherSunsetIMG,
+#currentWeatherSunriseIMG {
+    height: 4em;
+}
+
+#currentWeatherSunriseIMG img,
+#currentWeatherSunsetIMG img {
+    height: 100%;
+}
+
+#currentWeatherImgContainer img {
+    height: 100%;
+}
+
+#currentWeatherImgContainer {
+    height: 200px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#currentWeatherOvercast {
+    font-weight: bold;
+}
+
+/* ---------------------------------------------   
+    Suche
+  ------------------------------------------- */
+
+#searchToggleButton {
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 50px;
+}
+
+#searchToggleButtonLeft,
+#searchToggleButtonMiddle,
+#searchToggleButtonRight {
+    font-size: 1.5em;
+    height: 100%;
+    font-weight: bold;
+    border-width: 2px;
+    width: 33%;
+    border-color: orange;
+}
+
+.searchToggleNotActive {
+    background-color: white;
+}
+.searchToggleNotActive:hover {
+    cursor: pointer;
+}
+.searchToggleActive {
+    background-color: orange;
+}
+
+#searchToggleButtonLeft {
+    border-right: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#searchToggleButtonMiddle {
+    border-left: none;
+}
+
+#searchToggleButtonRight {
+    border-left: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#inputContainer {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#placeInput,
+#countryCodeInput,
+#latitudeInput {
+    border-radius: 4px;
+    border: none;
+    font-size: 1.2em;
+    text-align: center;
+    width: 400px;
+    padding: 12px 20px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#countryCodeInput {
+    width: 150px;
+}
+#latitudeInput {
+    width: 200px;
+}
+
+#placeSubmitButton {
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#placeSubmitButton:hover {
+    background-color: orange;
+}
+
+#spacer {
+    margin-top: 150px;
+}
+
+#listContainer {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 500px;
+}
+.listItem {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    font-size: 1.2em;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+.listItem:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.listLeft,
+.listRight {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+.listLeft {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+.listRight {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+#countryName {
+    margin-left: 10px;
+}
+#imgDiv img {
+    height: 100%;
+    margin-top: 3%;
+}
+#trashContainer {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: rgb(21, 54, 126);
+    font-size: 1.6em;
+}
+#trashContainer:hover {
+    color: orange;
+}
+
+/* ---------------------------------------------   
+    Wettervorhersage
+  ------------------------------------------- */
+#forecastWeatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#forecastWeatherContainer {
+    margin: 0 auto;
+    width: 800px;
+}
+#forecastMainHeaderContainer {
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#forecastMainHeaderTitle {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#forecastMainHeaderTime {
+    font-size: 1em;
+}
+
+#forecastListContainer {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 20px 0;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* ---------------------------------------------   
+    Wettervorhersage - Tag
+  ------------------------------------------- */
+.dayContainer {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.dayContainer:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.dayHeader {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.dayOverviewContainer {
+    display: flex;
+    font-size: 1.2em;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.dayOverviewLeft,
+.dayOverviewRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#dayOverviewOvercast {
+    margin-right: 20px;
+}
+#dayOverviewIMG {
+    margin-top: 3%;
+    height: 100%;
+}
+.dayOverviewRain {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+#weatherOverviewContainer {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 700px;
+    font-size: 1.2em;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+#lastWeatherOverviewContainer {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 700px;
+    font-size: 1.2em;
+    border: none;
+}
+#weatherOverviewTime {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+#weatherOverviewTemperature {
+    font-size: 1.2em;
+}
+#weatherOverviewImgContainer {
+    height: 160px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#weatherOverviewImgContainer img {
+    height: 100%;
+}
+
+/* ---------------------------------------------   
+    Diagramm
+  ------------------------------------------- */
+
+.chartContainer {
+    margin: 20px 0px;
+    margin-bottom: 50px;
+}
+.top {
+    display: flex;
+}
+.yWrap {
+    display: flex;
+    align-items: flex-end;
+}
+.yAxis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tempTag {
+    height: 0px;
+    line-height: 0px;
+}
+.chart {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.bars {
+    background-color: rgb(23, 41, 80);
+}
+.xAxis {
+    float: right;
+    display: flex;
+    text-align: center;
+}
+.tag {
+    height: 100%;
+}
+
+/* ---------------------------------------------   
+    Media Queries für Handys
+  ------------------------------------------- */
+@media only screen and (max-width: 768px) {
+    .headerContainer {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #toggleButton {
+        margin-top: 50px;
+    }
+    #currentWeatherContainer {
+        overflow: hidden;
+        border-radius: 0;
+        padding: 0;
+        padding-top: 10px;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 100%;
+    }
+
+    #currentWeatherHeader,
+    #currentWeatherCreationTime {
+        text-align: center;
+    }
+    #currentWeatherEssentials {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #currentWeatherInformationContainer {
+        text-align: center;
+    }
+    #currentWeatherImgContainer {
+        width: 100%;
+        margin: 0;
+        padding-top: 20px;
+    }
+    #currentWeatherOvercast {
+        margin-bottom: -30px;
+    }
+    #currentWeatherIMG {
+        margin-bottom: -60px;
+    }
+    #spacer {
+        margin: 0;
+    }
+    #listContainer {
+        border-radius: 0;
+        width: 100%;
+        padding: 0px;
+    }
+    #searchToggleButton {
+        margin-top: 50px;
+        width: 100%;
+        font-size: 0.8em;
+    }
+    #searchToggleButtonLeft,
+    #searchToggleButtonRight {
+        border-radius: 0;
+    }
+    #inputContainer {
+        width: 95%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #placeInput {
+        max-width: 90%;
+        margin: 0;
+    }
+    #placeSubmitButton {
+        margin: 0;
+        margin-top: 10px;
+    }
+    #countryCodeInput {
+        margin: 0;
+        max-width: 90%;
+        margin-top: 10px;
+    }
+    #latitudeInput {
+        margin: 0;
+        max-width: 90%;
+        margin-top: 10px;
+    }
+    #forecastWeatherContainer {
+        width: 100%;
+    }
+    #forecastMainHeaderContainer,
+    .dayHeader,
+    #weatherOverviewTime {
+        text-align: center;
+    }
+    #weatherOverviewImgContainer {
+        margin: 0;
+    }
+    #weatherOverviewTime {
+        margin-bottom: 10px;
+    }
+    .dayOverviewContainer {
+        flex-direction: column;
+    }
+    .dayOverviewTemperature {
+        margin-bottom: 10px;
+    }
+    .dayOverviewLeft {
+        display: block;
+        text-align: center;
+    }
+    .dayOverviewRight {
+        margin-top: 20px;
+    }
+    #forecastMainHeaderContainer {
+        width: 100%;
+        border-radius: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    #forecastListContainer {
+        width: 100%;
+        border-radius: 0px;
+        padding: 0px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .yAxis,
+    .xAxis {
+        font-size: 0.5em;
+    }
+}
